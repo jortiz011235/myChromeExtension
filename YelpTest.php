@@ -5,6 +5,7 @@
 	require_once ('lib/OAuth.php');
 
  	$unsigned_url = "http://api.yelp.com/v2/search?location=Lawrenceville,GA";
+ 	$searchByPhone_url = "http://api.yelp.com/phone_search?phone="; 
 
 
 	// Set your keys here

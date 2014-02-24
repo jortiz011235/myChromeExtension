@@ -3,8 +3,8 @@
 	
 	
 	require_once ('lib/OAuth.php');
-
- 	$unsigned_url = "http://api.yelp.com/v2/search?location=Lawrenceville,GA";
+	$category_filter = "";
+ 	$unsigned_url = "http://api.yelp.com/v2/search?location=Lawrenceville,GA&category_filter="";
  	$searchByPhone_url = "http://api.yelp.com/phone_search?phone="; 
 
 

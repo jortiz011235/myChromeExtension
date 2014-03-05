@@ -107,6 +107,10 @@ margin: auto;
 
 }
 
+input{
+
+    margin-bottom: 1em;
+}
 
 
 
@@ -129,7 +133,8 @@ margin: auto;
             <h1>Find Places</h1>
             <img src="ggcClaw.jpg" alt="fuzzy wuz he">
 
-            <p> If you are looking for something to eat check out this:</p>
+            <p> An app that uses the Yelp API to find businesses near by.</p>
+            <p> Ui styling using Twitter Bootstrap, FlatUI, and Effeckts.css</p>
 
 
 <form action="YelpView.php" method="post">
@@ -244,7 +249,7 @@ State: <input class="form-control" type="text" name="state" value="GA"><br>
 
 
         <?php
-        var_dump($response);
+       // var_dump($response);
 
         //foreach ($response->businesses as $place) {
         //     var_dump($place->categories);

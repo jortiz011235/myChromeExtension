@@ -10,7 +10,7 @@
 
 		 	$unsigned_url = "http://api.yelp.com/v2/search?location=" . $_POST["city"]. "," .$_POST["state"];
 	}
- 	var_dump($unsigned_url);
+ 	//var_dump($unsigned_url);
 
 
 	// Set your keys here

@@ -1,11 +1,16 @@
 <?php 
-
-	
-	
 	require_once ('lib/OAuth.php');
-	$category_filter = "";
- 	$unsigned_url = "http://api.yelp.com/v2/search?location=Lawrenceville,GA&category_filter="";
- 	$searchByPhone_url = "http://api.yelp.com/phone_search?phone="; 
+
+
+
+
+ 	$unsigned_url = "http://api.yelp.com/v2/search?location=Lawrenceville,GA";
+	if(isset($_POST["city"]) && isset($_POST["state"]))
+	{
+
+		 	$unsigned_url = "http://api.yelp.com/v2/search?location=" . $_POST["city"]. "," .$_POST["state"];
+	}
+ 	var_dump($unsigned_url);
 
 
 	// Set your keys here
@@ -39,24 +44,11 @@
 	$data = curl_exec($ch); // Yelp response
 	curl_close($ch);
 
+
+
+
 	// Handle Yelp response data
 	$response = json_decode($data);
-
-	$randomRestNum = rand(0,count($response->businesses));
-
-
-
-//
-// From http://non-diligent.com/articles/yelp-apiv2-php-example/
-//
-
-
-// Enter the path that the oauth library is in relation to the php file
-
-
-// For example, request business with id 'the-waterboy-sacramento'
-//$unsigned_url = "http://api.yelp.com/v2/business/the-waterboy-sacramento";
-
 
 
 ?>

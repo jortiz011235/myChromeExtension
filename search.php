@@ -74,11 +74,10 @@
 
     <div class="row demo-tiles container">
 
-      
 
-
+    </div>
+    <!-- .row -->
 </div>
-<!-- .row -->
-</div><!-- .container -->
+<!-- .container -->
 </body>
 </html>

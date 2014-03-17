@@ -1,22 +1,22 @@
 var EffecktLazyLoading = {
 
-  init: function() {
+    init: function () {
 
-    var self = this;
+        var self = this;
 
-    this.elements = $('.effeckt-lazy-loading-element');
-    this.needsPerspective = $('.effeckt-lazy-loading').data('effeckt-needs-perspective')?true:false;
+        this.elements = $('.effeckt-lazy-loading-element');
+        this.needsPerspective = $('.effeckt-lazy-loading').data('effeckt-needs-perspective') ? true : false;
 
-    this.viewportHeight = Effeckt.getViewportHeight();
+        this.viewportHeight = Effeckt.getViewportHeight();
 
-    this.elements.each( function( i, el ) {
+        this.elements.each(function (i, el) {
 
-      if ( self.isElementVisible( el ) ) {
-        $(el).addClass('shown');
-      }
-    });
+            if (self.isElementVisible(el)) {
+                $(el).addClass('shown');
+            }
+        });
 
-  },
+    },
 
 };
 

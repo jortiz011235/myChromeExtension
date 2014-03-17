@@ -1,42 +1,42 @@
 var EffecktButtons = {
 
-  init: function() {
+    init: function () {
 
-    this.bindUIActions();
+        this.bindUIActions();
 
-  },
+    },
 
-  bindUIActions: function() {
+    bindUIActions: function () {
 
-    var self = this;
+        var self = this;
 
-    $('.effeckt-button').on( Effeckt.buttonPressedEvent, function(){
-      self.showLoader(this);
-    });
+        $('.effeckt-button').on(Effeckt.buttonPressedEvent, function () {
+            self.showLoader(this);
+        });
 
-  },
+    },
 
-  showLoader: function(el) {
+    showLoader: function (el) {
 
-    var button = $(el),
-        resetTimeout;
+        var button = $(el),
+            resetTimeout;
 
-    if(button.attr( 'data-loading' )){
+        if (button.attr('data-loading')) {
 
-      button.removeAttr( 'data-loading' );
+            button.removeAttr('data-loading');
 
-    } else {
+        } else {
 
-      button.attr( 'data-loading', true );
+            button.attr('data-loading', true);
+
+        }
+
+        clearTimeout(resetTimeout);
+        resetTimeout = setTimeout(function () {
+            button.removeAttr('data-loading');
+        }, 2000);
 
     }
-
-    clearTimeout( resetTimeout );
-    resetTimeout = setTimeout( function() {
-      button.removeAttr( 'data-loading' );
-    }, 2000 );
-
-  }
 
 };
 

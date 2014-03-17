@@ -1,55 +1,55 @@
 var EffecktListItems = {
 
-  init: function() {
+    init: function () {
 
-    this.bindUIActions();
+        this.bindUIActions();
 
-  },
+    },
 
-  bindUIActions: function() {
+    bindUIActions: function () {
 
-    var self = this;
+        var self = this;
 
-    $(".effeckt-list-wrap button.add").on( Effeckt.buttonPressedEvent, function() {
-      self.addListItem(this);
-    });
+        $(".effeckt-list-wrap button.add").on(Effeckt.buttonPressedEvent, function () {
+            self.addListItem(this);
+        });
 
-    $(".effeckt-list-wrap button.remove").on( Effeckt.buttonPressedEvent, function() {
-      self.removeListItem(this);
-    });
+        $(".effeckt-list-wrap button.remove").on(Effeckt.buttonPressedEvent, function () {
+            self.removeListItem(this);
+        });
 
-    $("button.remove").hide();
-  },
+        $("button.remove").hide();
+    },
 
-  addListItem: function(el) {
+    addListItem: function (el) {
 
-    var insertPoint = $(el).parent().find("li:nth-child(3)");
-    $(el).parent().find("button.remove").show();
+        var insertPoint = $(el).parent().find("li:nth-child(3)");
+        $(el).parent().find("button.remove").show();
 
-    $("<li />", {
-      'text': "new item",
-      'class': "new-item"
-    }).insertAfter(insertPoint);
+        $("<li />", {
+            'text': "new item",
+            'class': "new-item"
+        }).insertAfter(insertPoint);
 
-  },
+    },
 
-  removeListItem: function(el) {
+    removeListItem: function (el) {
 
-    var $parent = $(el).parent(),
-        self = this;
+        var $parent = $(el).parent(),
+            self = this;
 
-    var elToRemove = $parent.find("li.new-item").last();
-    elToRemove.on( Effeckt.transitionAnimationEndEvent, function () {
-      elToRemove.off( Effeckt.transitionAnimationEndEvent );
-      elToRemove.remove();
-    });
+        var elToRemove = $parent.find("li.new-item").last();
+        elToRemove.on(Effeckt.transitionAnimationEndEvent, function () {
+            elToRemove.off(Effeckt.transitionAnimationEndEvent);
+            elToRemove.remove();
+        });
 
-    elToRemove.toggleClass("remove-item new-item");
-    if (!$parent.find("li.new-item").length) {
-      $parent.find("button.remove").hide();
+        elToRemove.toggleClass("remove-item new-item");
+        if (!$parent.find("li.new-item").length) {
+            $parent.find("button.remove").hide();
+        }
+
     }
-
-  }
 
 };
 

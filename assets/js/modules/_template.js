@@ -1,20 +1,20 @@
 var Effeckt = {
 
-  init: function() {
+    init: function () {
 
-    this.bindUIActions();
+        this.bindUIActions();
 
-  },
+    },
 
-  bindUIActions: function() {
+    bindUIActions: function () {
 
-    // event handlers
+        // event handlers
 
-  },
+    },
 
-  specificAction: function() {
+    specificAction: function () {
 
-  }
+    }
 
 };
 
